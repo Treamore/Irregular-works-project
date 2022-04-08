@@ -8,13 +8,13 @@ class IrregularVerb  {
 }
 const arrayOfIrregularVerbs=[];
 
-arrayOfIrregularVerbs.push(new IrregularVerb('be','was, were','been','быть'));
-arrayOfIrregularVerbs.push(new IrregularVerb('arise','arose','arisen', 'возникать'));
-arrayOfIrregularVerbs.push(new IrregularVerb('awake','awoke','awoke', 'просыпаться'));
-arrayOfIrregularVerbs.push(new IrregularVerb('bear','bore','born','вынашивать, носить'));
-arrayOfIrregularVerbs.push(new IrregularVerb('beat','beat','beaten','кусать'));
-arrayOfIrregularVerbs.push(new IrregularVerb('become','became','become','становиться'));
-arrayOfIrregularVerbs.push(new IrregularVerb('begin','began','begun','начинать'));
+arrayOfIrregularVerbs.push(new IrregularVerb('be','was, were','been','Быть'));
+arrayOfIrregularVerbs.push(new IrregularVerb('arise','arose','arisen', 'Возникать'));
+arrayOfIrregularVerbs.push(new IrregularVerb('awake','awoke','awoke', 'Просыпаться'));
+arrayOfIrregularVerbs.push(new IrregularVerb('bear','bore','born','Вынашивать, носить'));
+arrayOfIrregularVerbs.push(new IrregularVerb('beat','beat','beaten','Кусать'));
+arrayOfIrregularVerbs.push(new IrregularVerb('become','became','become','Становиться'));
+arrayOfIrregularVerbs.push(new IrregularVerb('begin','began','begun','Начинать'));
 
 function randomInteger(max){ //randomiser to find element in array
   let random=Math.random()*(max);
@@ -89,10 +89,22 @@ function checkFullForm(){ //correction check of form
   reduceMassLength();
   showWord();
   questionsCounter();
+  progressBarChange();
 }
   else {
     testResults();
   }
+}
+
+function cleanPlaceholder(){
+  let placeholderValue=this.placeholder;
+  this.placeholder='';
+  this.addEventListener('blur',()=>this.placeholder=placeholderValue);
+}
+
+function progressBarChange(){
+  let progressBar=document.getElementById("progressBar");
+  progressBar.style.width=`${100/startingLengthOfArray*(questionNumber-1)}%`
 }
 
 function sayHi(){ //useless function
@@ -108,9 +120,13 @@ let arrID=randomInteger(arrayOfIrregularVerbs.length);
 let questionNumber=1;
 let correctAnswersNumber=0;
 
+
 showWord();
 questionsCounter();
+progressBarChange();
 
-
+document.getElementById("verb").addEventListener('focus', cleanPlaceholder);
+document.getElementById("pastTense").addEventListener('focus', cleanPlaceholder);
+document.getElementById("pastParticiple").addEventListener('focus', cleanPlaceholder);
 let checkButton=document.getElementById("checkButton");
 checkButton.addEventListener('click', checkFullForm);

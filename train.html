@@ -9,18 +9,27 @@
 </head>
 <body>
 
-<div id="rusWord"> </div> <br>
-<input id='verb' placeholder="verb in English"> <br> <br>
-<input id='pastTense' placeholder="Past Tense Form"> <br> <br>
-<input id='pastParticiple' placeholder="Past Participle Form"> <br> <br>
-<input id="checkButton" type="button" value='Check'><br> <br>
-<div id="wordsCounter"></div><br> <br>
-<div id="correctAnswerCounter"></div><br> <br>
+<header>
+</header>
 
-<script src="train2.js"></script>
+<div id="mainBlock">
+  <div id="blockWithTest">
+    <div id="wordsCounter"></div><br> 
+    <div class="meter">
+      <span id="progressBar" style="width: 0%"></span>
+    </div> <br> <br>
+    <div id="rusWord"> </div> <br>
+    <input id='verb' class="verbRow" placeholder="Verb in English"> <br> <br>
+    <input id='pastTense' class="verbRow" placeholder="Past Tense Form"> <br> <br>
+    <input id='pastParticiple' class="verbRow" placeholder="Past Participle Form"> <br> <br>
+    <input id="checkButton" type="button" value='Check'><br> <br>
+    <div id="wordsCounter"></div><br> <br>
+  </div>
+</div>
+
+<footer>
+</footer>
+
 <script src="train.js"></script>
-
-
-
 </body>
 </html>

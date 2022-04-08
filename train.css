@@ -1,0 +1,143 @@
+*{
+    margin: 0px;
+    padding: 0px;
+  }
+
+body {
+    background-color: rgb(46, 44, 44);
+}
+header{
+    background-color:#464242;
+    width:100%;
+    height: 50px;
+    margin: 0px;
+    display:flex;
+    flex-direction: row;
+    position: sticky;
+    top:0;
+}
+
+#mainBlock {
+    width:50%;
+    height:100%;
+    margin: auto;
+}
+
+#blockWithTest {
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+}
+
+#rusWord{
+    margin: auto;
+    font-size: 24px;
+    color:white;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.verbRow {
+    display:block;
+    color: green;
+    height: 30px;
+    width:  300px;
+    margin: auto;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.verbRow:hover{
+    border-color: black;
+}
+
+.verbRow::placeholder{
+    color: black;
+    text-align: center;    
+}
+
+.verbRow:hover::placeholder{
+    color:plum;
+}
+
+
+#checkButton {
+    background-color: plum;
+    width: 200px;
+    height: 100px;
+    margin: auto;
+    border-radius: 15px;
+    font-size: 32px;
+    font-family: 'Grechen Fuemen', serif;
+    color: black;
+    border-color: black;
+}
+
+#checkButton:hover {
+    background-color: rgb(219, 141, 219);
+    border-color: white;
+    color:white;
+}
+
+#wordsCounter{
+    margin: auto;
+    font-size: 24px;
+    color:white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+footer {
+    background-color:#464242;
+    width:100%;
+    height: 50px;
+    margin: 0px;
+    display:block;
+    position:absolute;
+    bottom:0px;
+}
+
+.meter {
+    width: 30%;
+    height: 20px;  /* Can be anything */
+    margin:auto;
+    position: relative;
+    background: #555;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+
+.meter > span {
+    display: block;
+    height: 100%;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    background-color: rgb(43,194,83);
+        position: relative;
+        overflow: hidden;
+}
+
+.meter > span:after {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        background-image:
+           -webkit-gradient(linear, 0 0, 100% 100%,
+              color-stop(.25, rgba(255, 255, 255, .2)),
+              color-stop(.25, transparent), color-stop(.5, transparent),
+              color-stop(.5, rgba(255, 255, 255, .2)),
+              color-stop(.75, rgba(255, 255, 255, .2)),
+              color-stop(.75, transparent), to(transparent)
+           );
+        z-index: 1;
+        -webkit-background-size: 50px 50px;
+        -webkit-animation: move 2s linear infinite;
+
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        overflow: hidden;
+}
